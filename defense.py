@@ -124,5 +124,3 @@ img1.show()
 
             plot_gradients_2d(zip(worker_ids, dim_reduced_gradients))
 
-img2.show()
-img1.show()
