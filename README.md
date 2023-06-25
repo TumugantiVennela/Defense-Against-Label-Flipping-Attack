@@ -1,4 +1,4 @@
-# Data Poisoning Attacks Against Federated Learning Systems
+# Defense Against Label Flipping Attack
 
 Code for the this 2023 paper: Defense Against Label Flipping Attack
 
