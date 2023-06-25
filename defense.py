@@ -49,7 +49,7 @@ def load_models(args, model_filenames):
 
     return clients
 
-
+img1 = Image.open("C:/Users/TumugantiVennela/aafl/defense_result.png")
 def plot_gradients_2d(gradients):
     fig = plt.figure()
 
@@ -63,7 +63,7 @@ def plot_gradients_2d(gradients):
     plt.grid(False)
     plt.margins(0,0)
     plt.savefig(SAVE_NAME, bbox_inches='tight', pad_inches=0.1)
-
+img2 = Image.open("C:/Users/TumugantiVennela/aafl/defense_without_poison_workers.png")
 
 if __name__ == '__main__':
     args = Arguments(logger)
@@ -76,7 +76,8 @@ if __name__ == '__main__':
     param_diff = []
     worker_ids = []
     print("Batch Size: 10\nTest Batch Size: 1000\nEpochs: 10\nLearning Rate: 0.01\nMomentum: 0.5\nLog Interval: 100\nScheduler Step Size: 50\nNumber of Clients: 50\nNumber of Poisoned Clients: 18\nScheduler Minimum Learning Rate: 1e-10")
-
+img2.show()
+img1.show()
     for epoch in EPOCHS:
         start_model_files = get_model_files_for_epoch(model_files, epoch)
         # start_model_file = get_model_files_for_suffix(start_model_files, args.get_epoch_save_start_suffix())[0]
@@ -123,7 +124,5 @@ if __name__ == '__main__':
 
             plot_gradients_2d(zip(worker_ids, dim_reduced_gradients))
 
-img1 = Image.open("C:/Users/TumugantiVennela/aafl/defense_result.png")
-img2 = Image.open("C:/Users/TumugantiVennela/aafl/defense_without_poison_workers.png")
 img2.show()
 img1.show()
